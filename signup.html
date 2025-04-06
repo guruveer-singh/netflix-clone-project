@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix - Sign Up</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="signup-container">
+        <div class="logo">
+            <a href="index.html">
+                <img src="580b57fcd9996e24bc43c529.webp" height="50px" alt="Netflix">
+            </a>
+        </div>
+        <div class="form-container">
+            <h1>Create Account</h1>
+            <form action="process-signup.php" method="POST">
+                <div class="form-group">
+                    <input type="text" name="firstName" id="firstName" required>
+                    <label for="firstName">First Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="lastName" id="lastName" required>
+                    <label for="lastName">Last Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" id="email" required>
+                    <label for="email">Email Address</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" id="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" id="phone" required>
+                    <label for="phone">Phone Number</label>
+                </div>
+                <div class="form-group">
+                    <select name="plan" id="plan" required>
+                        <option value="">Select your plan</option>
+                        <option value="basic">Basic</option>
+                        <option value="standard">Standard</option>
+                        <option value="premium">Premium</option>
+                    </select>
+                </div>
+                <button type="submit" class="signup-button">Sign Up</button>
+                <p class="signin-text">Already have an account? 
+                    <!-- <a href="sign-in-form.php">Sign In</a> -->
+                </p>
+                <div class="login-link">
+                    Already have an account? 
+                    <a href="sign-in-form.php">Sign In</a>
+                </div>
+            </form>
+
+            <script>
+            // Auto-fill email from URL parameter
+            window.onload = function() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const email = urlParams.get('email');
+                if (email) {
+                    const emailInput = document.getElementById('email');
+                    emailInput.value = email;
+                    // Trigger the label animation
+                    emailInput.classList.add('has-value');
+                }
+            }
+            </script>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #141414;
+    color: #fff;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Header Styles */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+    padding: 0 4%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+}
+
+.main-header.scrolled {
+    background: rgb(20, 20, 20);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 25px;
+    margin-right: 2rem;
+}
+
+.nav-left ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-left ul li {
+    margin-right: 1.5rem;
+}
+
+.nav-left ul li a {
+    color: #e5e5e5;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.nav-left ul li a:hover,
+.nav-left ul li a.active {
+    color: #fff;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+
+.welcome-text {
+    color: #e5e5e5;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.profile-icon {
+    height: 32px;
+    width: 32px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.profile-icon:hover {
+    transform: scale(1.1);
+}
+
+.profile-menu {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background: rgb(20, 20, 20);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    padding: 8px 0;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.profile-section:hover .profile-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.profile-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-menu ul li {
+    padding: 8px 16px;
+}
+
+.profile-menu ul li a {
+    color: #e5e5e5;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 4px 0;
+}
+
+.profile-menu ul li a:hover {
+    color: #fff;
+}
+
+/* Main Content Styles */
+main {
+    padding-top: 70px;
+}
+
+.featured {
+    height: 80vh;
+    position: relative;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(20,20,20,1) 100%), url('movies/strangerthings.jpg') no-repeat center top;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    padding: 0 4%;
+    margin-bottom: 20px;
+}
+
+.featured-content {
+    max-width: 500px;
+    color: #fff;
+    padding: 20px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 8px;
+    margin-top: 60px;
+}
+
+.featured-content h1 {
+    font-size: 48px;
+    margin: 0 0 20px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.featured-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.play-btn,
+.more-info-btn {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.play-btn {
+    background: #fff;
+    color: #000;
+}
+
+.more-info-btn {
+    background: rgba(109, 109, 110, 0.7);
+    color: #fff;
+}
+
+/* Movies Row Styles */
+.movies-row {
+    padding: 2rem 4%;
+}
+
+.movies-row h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.movies-slider {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+}
+
+.movies-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.movie-item {
+    flex: 0 0 auto;
+    width: 250px;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.movie-item img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.hover-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.8);
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.controls button {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.hover-info h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.hover-info p {
+    font-size: 0.9rem;
+    color: #46d369;
+}

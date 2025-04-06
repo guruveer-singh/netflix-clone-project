@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://assets.nflxext.com/ffe/siteui/vlv3/93da5c27-be66-427c-8b72-5cb39d275279/94eb5ad7-10d8-4cca-bf45-ac52e0a052c0/IN-en-20240226-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.signup-container {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.logo {
+    padding: 20px 0;
+}
+
+.form-container {
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    padding: 60px 68px 40px;
+    margin-top: 20px;
+}
+
+h1 {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 28px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+input, select {
+    width: 100%;
+    height: 50px;
+    padding: 16px 20px;
+    border-radius: 4px;
+    border: none;
+    background: #333;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+select {
+    appearance: none;
+    background: #333 url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+}
+
+select option {
+    background: #333;
+    color: white;
+}
+
+label {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8c8c8c;
+    transition: all 0.2s ease;
+    pointer-events: none;
+}
+
+input:focus + label,
+input:valid + label {
+    top: 0;
+    font-size: 12px;
+    transform: translateY(-50%);
+}
+
+.signup-button {
+    width: 100%;
+    height: 50px;
+    background: #e50914;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 24px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.signup-button:hover {
+    background: #f40612;
+}
+
+.login-link {
+    color: #737373;
+    text-align: center;
+    margin-top: 16px;
+}
+
+.login-link a {
+    color: white;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+input:focus,
+select:focus {
+    background: #454545;
+}
+
+@media (max-width: 740px) {
+    .form-container {
+        padding: 30px 20px;
+    }
+    
+    .signup-container {
+        padding: 10px;
+    }
+}

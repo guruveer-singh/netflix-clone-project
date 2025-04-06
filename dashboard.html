@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">
+                <img src="580b57fcd9996e24bc43c529.webp" alt="Netflix" class="logo">
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">TV Shows</a></li>
+                    <li><a href="#">Movies</a></li>
+                    <li><a href="#">New & Popular</a></li>
+                    <li><a href="#">My List</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <img src="profile.png" alt="Profile" class="profile-icon">
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="featured">
+            <div class="featured-content">
+                <h1>Stranger Things</h1>
+                <p>When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl.</p>
+                <div class="buttons">
+                    <button class="play-btn">▶ Play</button>
+                    <button class="more-info-btn">ℹ More Info</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="movies-row">
+            <h2>Trending Now</h2>
+            <div class="movies-slider">
+                <div class="movie-item">
+                    <img src="movies/movie1.jpg" alt="Movie 1" />
+                    <div class="hover-info">
+                        <div class="controls">
+                            <button>▶</button>
+                            <button>+</button>
+                            <button>👍</button>
+                        </div>
+                        <h3>Avatar</h3>
+                        <p>98% Match</p>
+                    </div>
+                </div>
+                <div class="movie-item">
+                    <img src="movies/movie2.jpg" alt="Movie 2" />
+                    <div class="hover-info">
+                        <div class="controls">
+                            <button>▶</button>
+                            <button>+</button>
+                            <button>👍</button>
+                        </div>
+                        <h3>The Shawshank Redemption</h3>
+                        <p>95% Match</p>
+                    </div>
+                </div>
+                <div class="movie-item">
+                    <img src="movies/movie3.jpg" alt="Movie 3" />
+                    <div class="hover-info">
+                        <div class="controls">
+                            <button>▶</button>
+                            <button>+</button>
+                            <button>👍</button>
+                        </div>
+                        <h3>Inception</h3>
+                        <p>96% Match</p>
+                    </div>
+                </div>
+                <div class="movie-item">
+                    <img src="movies/movie4.jpg" alt="Movie 4" />
+                    <div class="hover-info">
+                        <div class="controls">
+                            <button>▶</button>
+                            <button>+</button>
+                            <button>👍</button>
+                        </div>
+                        <h3>The Godfather</h3>
+                        <p>97% Match</p>
+                    </div>
+                </div>
+                <div class="movie-item">
+                    <img src="movies/movie5.jpg" alt="Movie 5" />
+                    <div class="hover-info">
+                        <div class="controls">
+                            <button>▶</button>
+                            <button>+</button>
+                            <button>👍</button>
+                        </div>
+                        <h3>The Dark Knight</h3>
+                        <p>94% Match</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="movies-row">
+            <h2>Popular on Netflix</h2>
+            <div class="movies-slider">
+                <div class="movie-item">
+                    <img src="movies/movie6.jpg" alt="Movie 6" />
+                    <div class="hover-info">
+                        <div class="controls">
+                            <button>▶</button>
+                            <button>+</button>
+                            <button>👍</button>
+                        </div>
+                        <h3>The Matrix</h3>
+                        <p>93% Match</p>
+                    </div>
+                </div>
+                <div class="movie-item">
+                    <img src="movies/movie7.jpg" alt="Movie 7" />
+                    <div class="hover-info">
+                        <div class="controls">
+                            <button>▶</button>
+                            <button>+</button>
+                            <button>👍</button>
+                        </div>
+                        <h3>Fight Club</h3>
+                        <p>92% Match</p>
+                    </div>
+                </div>
+                <div class="movie-item">
+                    <img src="movies/movie8.jpg" alt="Movie 8" />
+                    <div class="hover-info">
+                        <div class="controls">
+                            <button>▶</button>
+                            <button>+</button>
+                            <button>👍</button>
+                        </div>
+                        <h3>The Lord of the Rings</h3>
+                        <p>95% Match</p>
+                    </div>
+                </div>
+                <div class="movie-item">
+                    <img src="movies/movie9.jpg" alt="Movie 9" />
+                    <div class="hover-info">
+                        <div class="controls">
+                            <button>▶</button>
+                            <button>+</button>
+                            <button>👍</button>
+                        </div>
+                        <h3>Pulp Fiction</h3>
+                        <p>94% Match</p>
+                    </div>
+                </div>
+                <div class="movie-item">
+                    <img src="movies/movie10.jpg" alt="Movie 10" />
+                    <div class="hover-info">
+                        <div class="controls">
+                            <button>▶</button>
+                            <button>+</button>
+                            <button>👍</button>
+                        </div>
+                        <h3>Parasite</h3>
+                        <p>96% Match</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Add hover effect for movie items
+        document.querySelectorAll('.movie-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.querySelector('.hover-info').style.opacity = '1';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.querySelector('.hover-info').style.opacity = '0';
+            });
+        });
+    </script>
+</body>
+</html>

